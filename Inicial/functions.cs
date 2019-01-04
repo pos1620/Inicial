@@ -8,18 +8,25 @@
  */
 using System;
 using System.IO;
+using System.Configuration;
 namespace Inicial
 {
 	/// <summary>
 	/// Description of functions.
 	/// </summary>
-	public static class functions
+	public class functions
 	{
-		public static void LerArquivos(string path)
+		
+		public static string caminho(){
+			return ConfigurationManager.AppSettings["arq_db"];
+		}
+		
+		public static void LerArquivos(String name)
 		{
-			if(File.Exists(path)){
+		
+			if(File.Exists(caminho()+name)){
 			//	Console.WriteLine("file was found it");
-			using(StreamReader arq = File.OpenText(path))
+			using(StreamReader arq = File.OpenText(caminho()+name))
 			{
 				String ln;
 				while((ln=arq.ReadLine())!=null)
@@ -30,5 +37,5 @@ namespace Inicial
 			else
 				Console.WriteLine("not found it");
 		}
-	}
-}
+	}//fim classe
+}//fim namespace

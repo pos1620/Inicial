@@ -7,8 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-//using Inicial;
-using people;
+using Inicial.people;
 namespace Inicial
 {
 	
@@ -33,10 +32,14 @@ namespace Inicial
 	//objeto pessoa
 //	people.pessoa p2 =new people.pessoa();
 //	people.example p3 =new people.example();
-pessoa p3 = new pessoa();
+	pessoa p3 = new pessoa{nome="luan"};
 //example p2 = new example();
 //p2.QuemSou();
 p3.QuemSou();
+Console.WriteLine("ur names is:"+p3.Nome);
+//p3.gravar();
+
+
 //	produto p1 =  new produto();
 //	p1.QuemSou();
 //	p1.imp();
@@ -63,7 +66,7 @@ p3.QuemSou();
 	
 	vars v1 = new vars();
 	v1.Imprimirvars();
-	functions.LerArquivos(@"c:\nome.txt");
+	functions.LerArquivos("nome.txt");
 		Console.ReadKey(true);
 		}//fim main
 	}//fim clsdde
